@@ -1,3 +1,5 @@
+import { ADD_TO_FAVORITE } from '../actions';
+import { REMOVE_FROM_FAVORITE } from '../actions';
 const inizialState = {
 	favorite: {
 		content: [],
@@ -6,7 +8,7 @@ const inizialState = {
 
 const mainReducer = (state = inizialState, action) => {
 	switch (action.type) {
-		case 'ADD_TO_FAVORITE':
+		case ADD_TO_FAVORITE:
 			return {
 				...state,
 				favorite: {
@@ -14,7 +16,7 @@ const mainReducer = (state = inizialState, action) => {
 					content: [...state.favorite.content, action.payload],
 				},
 			};
-		case 'REMOVE_FROM_FAVORITE':
+		case REMOVE_FROM_FAVORITE:
 			return {
 				...state,
 				favorite: {
