@@ -1,5 +1,6 @@
 import { Button, Col, Container, ListGroup, Row } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const Favourites = () => {
 	const myFavorites = useSelector((state) => state.favorite.content);
@@ -14,7 +15,7 @@ const Favourites = () => {
 								<ListGroup.Item
 									key={favorite._id}
 									className='d-flex justify-content-between'>
-									{favorite.company_name} || {favorite.title}{' '}
+									<Link to={`/${favorite.company_name}`}>{favorite.company_name}</Link>
 									<Button
 										variant='danger'
 										onClick={() => {
